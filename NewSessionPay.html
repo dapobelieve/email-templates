@@ -1,0 +1,549 @@
+<!Doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Luna</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+          integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+      :root {
+          --luna-green: #3A7D7D;
+          --lichen-400: #70625C;
+          --lichen-500: #38312E;
+      }
+      /* -------------------------------------
+            GLOBAL RESETS
+        ------------------------------------- */
+      /*All the styling goes here*/
+      img {
+          border: none;
+          -ms-interpolation-mode: bicubic;
+          max-width: 100%;
+      }
+
+      body {
+          background-color: #f6f6f6;
+          font-family: sans-serif;
+          -webkit-font-smoothing: antialiased;
+          font-size: 14px;
+          line-height: 1.4;
+          margin: 0;
+          padding: 0;
+          -ms-text-size-adjust: 100%;
+          -webkit-text-size-adjust: 100%;
+      }
+
+      table {
+          border-collapse: separate;
+          mso-table-lspace: 0pt;
+          mso-table-rspace: 0pt;
+          width: 100%;
+          /*box-sizing: border-box;*/
+      }
+
+      table td {
+          font-family: DM Sans, sans-serif !important;
+          vertical-align: top;
+      }
+
+      .two-columns {
+        font-size: 0;
+        /*text-align: center;*/
+        /*padding: 12px;*/
+      }
+
+      .two-columns .column {
+          width: 100%;
+          max-width: 280px;
+          /*display: inline-block;*/
+          vertical-align: top;
+      }
+
+      /* -------------------------------------
+            BODY & CONTAINER
+        ------------------------------------- */
+      .body {
+          background-color: #f6f6f6;
+          width: 100%;
+      }
+      .container {
+          display: block;
+          margin: 0 auto !important;
+          /* makes it centered */
+          max-width: 710px;
+          padding: 50px;
+          width: 633px;
+      }
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 601px;
+        padding: 10px;
+      }
+
+      /* -------------------------------------
+            HEADER, FOOTER, MAIN
+        ------------------------------------- */
+      .main {
+        background: #ffffff;
+        border-radius: 16px;
+        width: 100%;
+        color: var(--lichen-400);
+      }
+
+      /*luna MAIL STYLES*/
+      .white-wrapper {
+          border: 1px solid #D1CAC7;
+          border-radius: 12px;
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+          margin-bottom: 20px;
+      }
+
+      .white-details-wrapper {
+          box-sizing: border-box;
+          padding: 16px;
+          margin-bottom: 14px;
+      }
+      .grey-wrapper {
+        border: 1px solid #D1CAC7;
+        background-color: #F6F4F4;
+        border-radius: 8px;
+        padding: 12px;
+      }
+
+      .grey-wrapper .amount {
+        font-size: 30px;
+        color: #38312E;
+        margin-bottom: 0px;
+      }
+      .dot {
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background-color: #F43F5E;
+        margin-bottom: 3px;
+        margin-right: 3px;
+      }
+      .i-request {
+          font-family: DM Sans,sans-serif;
+          margin-bottom: 35px;
+          font-size: 24px;
+          color: var(--lichen-500);
+      }
+
+      .general {
+        font-family: Inter, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--lichen-500);
+        line-height: 24px;
+      }
+
+      .general-2 {
+          font-family: 'DM Sans', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          margin-bottom: 3px;
+          font-size: 16px;
+          color: var(--lichen-500);
+          line-height: 24px;
+      }
+
+      .wrapper {
+          box-sizing: border-box;
+          padding: 32px;
+      }
+
+      .content-block {
+          padding-bottom: 10px;
+          padding-top: 10px;
+      }
+
+      .footer {
+          clear: both;
+          margin-top: 10px;
+          text-align: center;
+          width: 100%;
+      }
+
+      .footer td,
+      .footer p,
+      .footer span,
+      .footer a {
+          color: #999999;
+          font-size: 12px;
+          text-align: center;
+      }
+
+      /* -------------------------------------
+            TYPOGRAPHY
+        ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+          color: #000000;
+          font-family: sans-serif;
+          font-weight: 400;
+          line-height: 1.4;
+          margin: 0;
+          margin-bottom: 30px;
+      }
+
+      h1 {
+          font-size: 35px;
+          font-weight: 300;
+          text-align: center;
+          text-transform: capitalize;
+      }
+
+      p,
+      ul,
+      ol {
+          font-family: DM Sans, sans-serif;
+          font-weight: normal;
+          margin: 0;
+          margin-bottom: 30px;
+      }
+
+      p li,
+      ul li,
+      ol li {
+          list-style-position: inside;
+          margin-left: 5px;
+      }
+
+      a {
+          color: #3A7D7D;
+          text-decoration: underline;
+      }
+
+      /* -------------------------------------
+            BUTTONS
+        ------------------------------------- */
+      .box-sizing {
+          box-sizing: border-box;
+      }
+
+
+      .btn {
+          box-sizing: border-box;
+          width: 100%;
+      }
+
+      .btn>tbody>tr>td {
+          /*padding-bottom: 15px;*/
+      }
+
+      .btn table {
+          width: auto;
+      }
+
+      .btn table td {
+          background-color: #ffffff;
+          border-radius: 5px;
+          text-align: center;
+      }
+
+      .btn a {
+          background-color: #ffffff;
+          border: solid 1px #3A7D7D;
+          border-radius: 8px;
+          box-sizing: border-box;
+          color: #3A7D7D;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+          padding: 7px 19px;
+          text-decoration: none;
+          text-transform: capitalize;
+      }
+
+      .btn-primary table td {
+          background-color: #3A7D7D;
+      }
+
+      .btn-primary a {
+          background-color: #3A7D7D;
+          border-color: #3A7D7D;
+          color: #ffffff;
+      }
+
+      hr {
+          border: 0;
+          border-bottom: 1px solid #f6f6f6;
+          margin: 20px 0;
+      }
+
+      /* -------------------------------------
+            RESPONSIVE AND MOBILE FRIENDLY STYLES
+        ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+          table.body h1 {
+              font-size: 28px !important;
+              margin-bottom: 10px !important;
+          }
+
+          table.body p,
+          table.body ul,
+          table.body ol,
+          table.body td,
+          table.body span,
+          table.body a {
+              font-size: 14px !important;
+          }
+
+          table.body .wrapper,
+          table.body .article {
+              padding: 5px !important;
+          }
+
+          table.body .content {
+              padding: 0 !important;
+          }
+
+          table.body .container {
+              padding: 0 !important;
+              width: 100% !important;
+          }
+
+          table.body .main {
+              border-left-width: 0 !important;
+              border-radius: 0 !important;
+              border-right-width: 0 !important;
+          }
+
+          table.body .btn table {
+              /*width: 100% !important;*/
+          }
+
+          table.body .btn a {
+              /*width: 100% !important;*/
+          }
+
+          table.body .img-responsive {
+              height: auto !important;
+              max-width: 100% !important;
+              width: auto !important;
+          }
+      }
+  </style>
+</head>
+
+<body>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container">
+      <div class="content">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="content-block" style="text-align: left; margin-left: 32px;">
+              <img style="height: 48px; margin-left: 32px"
+                   src="https://getwelp-files.s3.us-west-2.amazonaws.com/logos/v1/logo.png"
+                   alt="Luna Logo" />
+            </td>
+          </tr>
+        </table>
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table role="presentation" class="main">
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <p class="general">Hi [firstName],</p>
+                    <p class="general" style="margin-bottom: 35px">You have been invited to a new session booking by [insert trainer name], your dog trainer. See the details below, and click Yes/No/Maybe to accept or decline the booking.</p>
+                    <p class="general" style="margin-bottom: 45px">
+                      If you would like to reschedule or suggest an alternative time,
+                      please message your trainer directly via the Luna Connect App.
+                    </p>
+
+                    <table class="white-wrapper" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td class="white-details-wrapper">
+                          <p class="i-request">New Session Booking</p>
+                          <p style="margin-bottom: 34px; font-family: 'Inter', sans-serif; font-weight: bold; color: #38312E" class="general-2">Session Title</p>
+                          <p style="margin-bottom: 45px" class="general-2">This is a description of the session from the trainer.This description can be a single line or more lines.</p>
+                          <table style="color: #38312E; font-size: 16px;" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td>
+                                <table style="margin-bottom: 24px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Trainer</td>
+                                    <td align="right">Martin Cruz</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                <table style="margin-bottom: 24px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>When</td>
+                                    <td align="right">Tue, 15 Mar 2022 - 11:00 AM – 12:30 PM GMT +1</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                <table style="margin-bottom: 24px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Meeting type</td>
+                                    <td align="right">Remote</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                <table style="margin-bottom: 24px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Joining Info</td>
+                                    <td align="right"><a href="#">	meet.google.com/ywx-woia-coh</a></td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                <table style="margin-bottom: 24px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Going</td>
+                                    <td align="right">
+                                      <a href="#" style="text-decoration: none; font-weight: bold;margin-right: 5px">Yes</a>
+                                      <a href="#" style="text-decoration: none; font-weight: bold;margin-right: 5px">No</a>
+                                      <a href="#" style="text-decoration: none; font-weight: bold;">Maybe</a>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0px 15px 20px 15px">
+                          <p style="margin-bottom: 34px; font-family: 'Inter', sans-serif; font-weight: bold; color: #38312E" class="general-2">Payment Request</p>
+                          <p  style="margin-bottom: 45px" class="general-2">Your trainer has included a quick pay link, to allow you to pay inadvance of your session. Please click the link below to settle their payment request. </p>
+                          <table style="color: #38312E; font-size: 16px; font-weight: 500" class="grey-wrapper" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td>
+                                <table style="margin-bottom: 12px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>1-2-1  Behaviour Consult </td>
+                                    <td align="right">£60</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Training Halter </td>
+                                    <td align="right">£17</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                <table style="font-size: 20px; margin-top: 12px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Total</td>
+                                    <td align="right" style="font-weight: 700; font-family: 'DM Sans',sans-serif ">£77</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 20px 15px 20px 15px">
+                          <table style="color: #38312E; font-size: 16px;" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td>
+                                <table style="margin-bottom: 24px" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                  <tbody>
+                                  <tr>
+                                    <td>Quick Pay Link</td>
+                                    <td align="right">
+                                      <a href="#">goluna.com/payment/pl78383734</a>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <p style="color: #38312E; font-size: 16px; font-family: 'Inter',serif; margin-bottom: 64px; margin-top: 40px">The Luna Team</p>
+                    <p style="margin-bottom: 35px">This email was sent to <a href="#">clientnumberone@gmail.com.</a>  You recieved this email as a client of a trainer using Luna as their business software. If you prefer not to receive your payment requests to this email, you can update or manage you email preferences within the <a href="#">Luna Connect app</a>.
+                      </p>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <p style="
+                          font-weight: 700;
+                          color: #70625C;
+                          font-family: 'Inter',sans-serif;
+                          margin-bottom: 2px">GetWelp Ltd. Trading name - Luna & Luna Connect.</p>
+                          <p style="font-family: 'Inter', sans-serif; margin-bottom: 2px">3rd Floor 86-90 Paul Street, London, England, EC2A 4NE</p>
+                          <p>Company No: 13198673</p>
+                        </td>
+                      </tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <table class="box-sizing" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                      <tr>
+                        <td style="font-size: 16px"> <a href="#">
+                          <img src="https://getwelp-files.s3.us-west-2.amazonaws.com/logos/v1/favicon.png" alt="Luna Logo" width="32" style="max-width: 32px">
+                        </a> </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td style="text-align:right">
+                    <table role="presentation" class="box-sizing" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td >
+                          <a>
+                            <i class="fa-brands fa-instagram-square" style="color: #70625C;; font-size: 20px"></i>
+                          </a>
+                          <a>
+                            <i class="fa-brands fa-facebook-square" style="color: #70625C;; font-size: 20px; padding: 0 28px"></i>
+                          </a>
+                          <a>
+                            <i class="fa-brands fa-linkedin" style="color: #70625C;; font-size: 20px"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+        <!-- END CENTERED WHITE CONTAINER -->
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+</html>
